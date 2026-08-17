@@ -56,8 +56,8 @@ Na prática: de cada 10 clientes que realmente cancelariam, o modelo identifica 
 
 Aplicando uma taxa de retenção estimada de 2% sobre o volume transacionado dos clientes classificados corretamente:
 
-- 💰 **~R$ 16.190** em lucro que seria perdido, mas foi detectado a tempo pelo modelo.
-- ⚠️ **~R$ 5.325** em lucro que ainda escapa pelos pontos cegos (os 58 falsos negativos).
+- **~R$ 16.190** em lucro que seria perdido, mas foi detectado a tempo pelo modelo.
+- **~R$ 5.325** em lucro que ainda escapa pelos pontos cegos (os 58 falsos negativos).
 
 Mesmo com um modelo simples e totalmente interpretável, o retorno financeiro líquido já é positivo — e o próprio resultado aponta exatamente onde investir esforço para melhorar ainda mais essa margem: reduzir os falsos negativos.
 
