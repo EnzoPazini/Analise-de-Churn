@@ -6,12 +6,11 @@ Projeto de análise e previsão de churn (cancelamento de clientes) de um banco,
 
 ```
 .
-├── BankChurners.csv              # Dataset original
-├── Analise.ipynb       # Notebook com o pipeline completo
-├── dashboard-churn/
-│   ├── index.html                # Página do dashboard
-│   ├── style.css                 # Estilos
-│   └── script.js                 # Lógica dos gráficos (boxplots em SVG)
+├── BankChurners.csv    # Dataset original
+├── Analise.ipynb        # Notebook com o pipeline completo
+├── index.html            # Página do dashboard
+├── style.css             # Estilos do dashboard
+├── script.js             # Lógica dos gráficos do dashboard (boxplots em SVG)
 └── README.md
 ```
 
@@ -31,30 +30,30 @@ Organizado em etapas, cada uma em sua própria célula com uma célula markdown 
 
 ```bash
 pip install numpy pandas matplotlib seaborn scikit-learn jupyter
-jupyter notebook Aula01-organizado.ipynb
+jupyter notebook Analise.ipynb
 ```
 
 > O notebook espera o arquivo `BankChurners.csv` na mesma pasta.
 
-## Dashboard (`dashboard-churn/`)
+## Dashboard (`index.html`)
 
 Página estática (HTML + CSS + JS puro, sem dependências externas) com um resumo visual dos resultados do modelo: KPIs principais, matriz de confusão, impacto financeiro estimado e os boxplots das duas variáveis mais relevantes.
 
 ### Como visualizar
 
-Basta abrir `dashboard-churn/index.html` no navegador — não precisa de servidor. Se preferir, também pode ativar o **GitHub Pages** apontando para a pasta `dashboard-churn/` para ter uma versão publicada online.
+Basta abrir `index.html` no navegador — não precisa de servidor. Se preferir, também pode ativar o **GitHub Pages** apontando para a raiz do repositório para ter uma versão publicada online.
 
 Os números exibidos (KPIs, matriz de confusão, valores de impacto financeiro) foram copiados manualmente da saída do notebook; se o modelo for retreinado com dados diferentes, é preciso atualizar esses valores em `index.html` e as estatísticas dos boxplots em `script.js`.
 
 ## Principais resultados do modelo
 
-| Métrica          | Valor |
-| ---------------- | ----- |
-| Acurácia         | 86,2% |
-| Recall (churn)   | 82,2% |
+| Métrica | Valor |
+|---|---|
+| Acurácia | 86,2% |
+| Recall (churn) | 82,2% |
 | Precisão (churn) | 54,7% |
 | F1-score (churn) | 0,657 |
-| Falsos negativos | 58    |
-| Falsos positivos | 221   |
+| Falsos negativos | 58 |
+| Falsos positivos | 221 |
 
 O modelo prioriza **recall** sobre precisão (via `class_weight='balanced'`), já que o custo de não detectar um cliente em risco de churn tende a ser maior do que o custo de investigar um falso alarme.
